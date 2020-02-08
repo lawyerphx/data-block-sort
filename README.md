@@ -30,9 +30,30 @@ tidb 小作业
 
 ### 代码
 
-data structures/
+**data structures/**
 
-algorithms/
+* area.h : 实现了分区的数据结构。
+  * partition：分区。
+  * partition_iter：在分区上的迭代器。
+* data_block.h：实现了数据块的数据结构。
 
-main/
+**algorithms/**
 
+* qsort_solve：算法 **quick sort** 的实现。
+* merge_solve：算法 **merge sort** 的实现。
+
+**main/**
+
+* generator：数据块生成器。
+* quick_sort_tester：算法 1 的测试程序。
+* merge_sort_tester：算法 2 的测试程序。
+
+*详细参数说明见代码注释*
+
+---
+
+### 运行方法
+
+执行 cmake-build-debug/main.exe
+
+或者编译运行 main.cpp 即可
