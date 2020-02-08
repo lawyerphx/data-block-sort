@@ -9,24 +9,16 @@
 #include "../data_structures/area.h"
 #define debug(x) std::cout << #x << " = " << x << std::endl
 
-Partition* a;
-int n;
+namespace quick_sort {
+    Partition *a;
+    int n;
+}
 
 void p_swap(int *x,int *y)
 {
     int tmp = *x;
     *x = *y;
     *y = tmp;
-}
-
-Partition_iter init_iter(int i, int cmd)
-//initialize a iterator for the i-th partition
-//cmd = 0: from head
-//cmd = 1: from end
-{
-    Partition_iter res;
-    res.init_iter(cmd, a+i);
-    return res;
 }
 
 void q_sort(Partition_iter s, Partition_iter t, int l, int r) {
@@ -63,33 +55,33 @@ void q_sort(Partition_iter s, Partition_iter t, int l, int r) {
     }
 }
 
-void q_solve(Partition * _a, int _n) {
-    a = _a;
-    n = _n;
-    int total = a[0].total_len;
-    for(int i=1;i<n;i++) {  //build links between partitions.
-        total += a[i].total_len;
-        a[i-1].end->next = a[i].head;
-        a[i].head->pre = a[i-1].end;
+void q_solve(Partition * _a, int _n, bool test_print= false) {
+    quick_sort::a = _a;
+    quick_sort::n = _n;
+    int total = quick_sort::a[0].total_len;
+    for(int i=1;i<quick_sort::n;i++) {  //build links between partitions.
+        total += quick_sort::a[i].total_len;
+        quick_sort::a[i-1].end->next = quick_sort::a[i].head;
+        quick_sort::a[i].head->pre = quick_sort::a[i-1].end;
     }
 
-    q_sort(init_iter(0,0), init_iter(n-1,1), 1, total);
-    puts("<--- quick data_block_sort done --->");
-    Partition_iter it = init_iter(0,0);
+    q_sort(init_iter(quick_sort::a,0,0), init_iter(quick_sort::a,quick_sort::n-1,1), 1, total);
+    puts("<--- quick data_block sort done --->");
+    Partition_iter it = init_iter(quick_sort::a,0,0);
     int tmp = -1e9;
     while(it.curr()) {
         if(tmp > *it.curr()) {
             puts("!<--- error: unsorted --->");
         }
-     //   printf("%d ",tmp = *it.curr());
+        if(test_print) printf("%d ",tmp = *it.curr());
         it++;
     }
     puts("<--- result check done --->");
-//    printf("\n");
+    if(test_print) printf("\n");
 
-    for(int i=1;i<n;i++) {  // break the links
-        a[i-1].end->next = nullptr;
-        a[i].head->pre = nullptr;
+    for(int i=1;i<quick_sort::n;i++) {  // break the links
+        quick_sort::a[i-1].end->next = nullptr;
+        quick_sort::a[i].head->pre = nullptr;
     }
 }
 

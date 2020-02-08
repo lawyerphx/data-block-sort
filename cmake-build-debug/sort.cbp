@@ -80,6 +80,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="D:/Cprojects/data-block-sort/algorithms/merge_solve.h">
+			<Option target="sort"/>
+		</Unit>
 		<Unit filename="D:/Cprojects/data-block-sort/algorithms/qsort_solve.h">
 			<Option target="sort"/>
 		</Unit>
