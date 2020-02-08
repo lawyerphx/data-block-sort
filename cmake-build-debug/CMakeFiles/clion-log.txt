@@ -1,4 +1,4 @@
-"D:\CLion 2019.2.5\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\allvphx\CLionProjects\data_block_sort
+"D:\CLion 2019.2.5\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" D:\Cprojects\data-block-sort
 -- The C compiler identification is GNU 8.2.0
 -- The CXX compiler identification is GNU 8.2.0
 -- Check for working C compiler: C:/MinGW/bin/gcc.exe
@@ -15,4 +15,4 @@
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/allvphx/CLionProjects/data_block_sort/cmake-build-debug
+-- Build files have been written to: D:/Cprojects/data-block-sort/cmake-build-debug

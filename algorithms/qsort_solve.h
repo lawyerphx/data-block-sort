@@ -20,6 +20,9 @@ void p_swap(int *x,int *y)
 }
 
 Partition_iter init_iter(int i, int cmd)
+//initialize a iterator for the i-th partition
+//cmd = 0: from head
+//cmd = 1: from end
 {
     Partition_iter res;
     res.init_iter(cmd, a+i);
