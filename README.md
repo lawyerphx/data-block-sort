@@ -56,4 +56,23 @@ tidb 小作业
 
 执行 cmake-build-debug/main.exe
 
-或者编译运行 main.cpp 即可
+或者编译运行 main.cpp 即可，排序接口为
+
+```c++
+void merge_solve(Partition * _a, int _n, int _max_block_size, bool test_print= false)
+```
+
+```c++
+void q_solve(Partition * _a, int _n, bool test_print= false)
+```
+
+测试接口为
+
+```c++
+void quick_sort_tester(int cnt_part,int block_per_part,int max_block_size)
+```
+
+```c++
+void merge_sort_tester(int cnt_part,int block_per_part,int max_block_size)
+```
+
